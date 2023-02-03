@@ -28,14 +28,6 @@ class Subscribe
     public string $description = 'Lorem ipsum dolor sit amet, consectectur adipiscing elit, sed do eiusmod tempor';
 
     /**
-     * @BeConfigItem("所占列数",
-     *     description="底部默认有3列",
-     *     values="return [1, 2, 3]",
-     *     driver="FormItemSelect")
-     */
-    public int $cols = 1;
-
-    /**
      * @BeConfigItem("社交账号 - Facebook",,
      *     description="填写 Facebook 账号，留空时不显示"
      *     driver="FormItemInput"

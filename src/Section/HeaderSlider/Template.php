@@ -18,9 +18,6 @@ class Template extends Section
         echo $this->getCssBackgroundColor('header-slider');
 
         echo '#' . $this->id . ' .header-slider {';
-
-        echo 'padding-top: 5rem;';
-
         if ($this->config->backgroundImage !== '') {
             echo 'background-position: center center;';
             echo 'background-repeat: no-repeat;';
@@ -164,7 +161,7 @@ class Template extends Section
             echo '<div class="header-slider-description"><div class="be-pt-100">' . $this->config->description . '</div></div>';
             if ($this->config->linkText !== '') {
                 echo '<div class="be-mt-200 header-slider-link">';
-                echo '<a href="' . $this->config->linkUrl . '" class="be-fs-75">' . $this->config->linkText . '</a>';
+                echo '<a href="' . $this->config->linkUrl . '" class="be-fs-80">' . $this->config->linkText . '</a>';
                 echo '</div>';
             }
             echo '</div>';

@@ -215,7 +215,7 @@ class Template extends Section
 
                             echo '<h3 class="footer-item-title">' . $menuItem->label . '</h3>';
 
-                            echo '<div class="be-mt-300">';
+                            echo '<div class="be-mt-200">';
                             echo '<div class="footer-item-menu">';
                             foreach ($menuItem->subItems as $subMenuItem) {
                                 $url = 'javascript:void(0);';

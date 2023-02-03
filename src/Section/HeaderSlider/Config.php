@@ -53,7 +53,7 @@ class Config
      *     driver = "FormItemInput"
      * )
      */
-    public string $linkText = 'EXPLORE MORE &rarr;';
+    public string $linkText = 'EXPLORE MORE <i class="bi-arrow-right"></i>';
 
     /**
      * @BeConfigItem("内容按钮链接",
@@ -121,7 +121,7 @@ class Config
      *     description = "上右下左（CSS padding 语法）"
      * )
      */
-    public string $paddingMobile = '0';
+    public string $paddingMobile = '5rem 0 2rem 0';
 
     /**
      * @BeConfigItem("内边距 （平板端）",
@@ -129,7 +129,7 @@ class Config
      *     description = "上右下左（CSS padding 语法）"
      * )
      */
-    public string $paddingTablet = '0';
+    public string $paddingTablet = '5rem 0 3rem 0';
 
     /**
      * @BeConfigItem("内边距 （电脑端）",
@@ -137,7 +137,7 @@ class Config
      *     description = "上右下左（CSS padding 语法）"
      * )
      */
-    public string $paddingDesktop = '0';
+    public string $paddingDesktop = '5rem 0 4rem 0';
 
     /**
      * @BeConfigItem("外边距 （手机端）",

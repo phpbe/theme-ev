@@ -8,6 +8,12 @@ class Config
 {
 
     /**
+     * @BeConfigItem("是否启用",
+     *     driver = "FormItemSwitch")
+     */
+    public int $enable = 1;
+
+    /**
      * @BeConfigItem("LOGO",
      *     driver="FormItemStorageImage"
      * )
