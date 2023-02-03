@@ -28,7 +28,7 @@ class Template extends Section
 
         // ------------------------------------------------------------------------------------------------------------- LOGO
         echo '#' . $this->id . ' .header-logo {';
-        echo 'line-height: 100px;';
+        echo 'line-height: 5rem;';
         echo '}';
 
         echo '#' . $this->id . ' .header-logo img {';
@@ -40,49 +40,49 @@ class Template extends Section
 
 
         // ------------------------------------------------------------------------------------------------------------- 菜单
-        echo '.header-menu {';
+        echo '#' . $this->id . ' .header-menu {';
         echo 'display: none;';
         echo '}';
 
-        echo '.header-menu ul {';
+        echo '#' . $this->id . ' .header-menu ul {';
         echo 'padding: 0;';
         echo 'margin: 0;';
         echo '}';
 
-        echo '.header-menu li {';
+        echo '#' . $this->id . ' .header-menu li {';
         echo 'list-style: none;';
         echo '}';
 
-        echo '.header-menu-lv1-ul {';
+        echo '#' . $this->id . ' .header-menu-lv1-ul {';
         echo 'position: relative;';
         echo '}';
 
-        echo '.header-menu-lv1-li {';
+        echo '#' . $this->id . ' .header-menu-lv1-li {';
         echo 'display: inline-block;';
         echo 'padding: 0;';
         echo 'position: relative;';
         echo '}';
 
-        echo '.header-menu-lv1-a {';
-        echo 'height: 100px;';
-        echo 'line-height: 100px;';
+        echo '#' . $this->id . ' .header-menu-lv1-a {';
+        echo 'height: 5rem;';
+        echo 'line-height: 5rem;';
         echo 'padding: 0 1rem;';
-        echo 'color: #ccc;';
-        echo 'font-size: 1.5rem;';
-        echo '}';
-
-
-        echo '.header-menu-lv1-li-active .header-menu-lv1-a,';
-        echo '.header-menu-lv1-a:hover {';
-        //echo 'color: var(--major-color);';
         echo 'color: #fff;';
+        echo 'font-size: .75rem;';
+        echo 'font-weight: 600;';
         echo '}';
 
-        echo '.header-menu-lv2-ul {';
+
+        echo '#' . $this->id . ' .header-menu-lv1-li-active .header-menu-lv1-a,';
+        echo '#' . $this->id . ' .header-menu-lv1-a:hover {';
+        echo 'color: var(--major-color);';
+        echo '}';
+
+        echo '#' . $this->id . ' .header-menu-lv2-ul {';
         echo 'border-top: var(--major-color) 2px solid;';
         echo 'position: absolute;';
-        echo 'top: 80px;';
-        echo 'min-width: 240px;';
+        echo 'top: 4rem;';
+        echo 'min-width: 180px;';
         echo 'background-color: #fff;';
         echo 'opacity: 0;';
         echo 'transition: all 0.5s ease;';
@@ -91,26 +91,27 @@ class Template extends Section
         echo 'padding: .25rem 0 !important;';
         echo '}';
 
-        echo '.header-menu-lv1-li:hover .header-menu-lv2-ul {';
+        echo '#' . $this->id . ' .header-menu-lv1-li:hover .header-menu-lv2-ul {';
         echo 'opacity: 1;';
         echo 'transform: rotateX(0)';
         echo '}';
 
-        echo '.header-menu-lv2-li {';
+        echo '#' . $this->id . ' .header-menu-lv2-li {';
         echo 'padding: 0 1.5rem;';
         echo '}';
 
-        echo '.header-menu-lv2-a {';
+        echo '#' . $this->id . ' .header-menu-lv2-a {';
         echo 'display: block;';
         echo 'color: var(--minor-color);';
         echo 'padding: 1rem 0;';
         echo 'line-height: 1;';
         echo 'border-bottom: #eee 1px solid;';
         echo 'position: relative;';
-        echo 'font-size: 1.25rem;';
+        echo 'font-size: .75rem;';
+        echo 'font-weight: 600;';
         echo '}';
 
-        echo '.header-menu-lv2-a:before {';
+        echo '#' . $this->id . ' .header-menu-lv2-a:before {';
         echo 'content: \'\';';
         echo 'position: absolute;';
         echo 'left: 0;';
@@ -122,23 +123,32 @@ class Template extends Section
         echo 'transform: scaleX(0);';
         echo '}';
 
-        echo '.header-menu-lv2-a:hover:before {';
+        echo '#' . $this->id . ' .header-menu-lv2-a:hover:before {';
         echo 'transform: scaleX(1);';
         echo '}';
 
-        echo '.header-menu-lv2-li-active header-menu-lv2-a, ';
-        echo '.header-menu-lv2-a:hover {';
+        echo '#' . $this->id . ' .header-menu-lv2-li-active header-menu-lv2-a, ';
+        echo '#' . $this->id . ' .header-menu-lv2-a:hover {';
         echo 'color: var(--major-color);';
         echo '}';
         // ============================================================================================================= 菜单
+
+
+        // ------------------------------------------------------------------------------------------------------------- 联系我们按钮
+        echo '#' . $this->id . ' .header-contact-us {';
+        echo 'display: none;';
+        echo 'height: 5rem;';
+        echo 'line-height: 5rem;';
+        echo '}';
+        // ============================================================================================================= 联系我们按钮
 
 
 
         // ------------------------------------------------------------------------------------------------------------- 手机商 菜单按钮
         echo '.header-toggle {';
         echo 'display: block;';
-        echo 'height: 100px;';
-        echo 'line-height: 100px;';
+        echo 'height: 5rem;';
+        echo 'line-height: 5rem;';
         echo 'color: #fff;';
         echo 'cursor: pointer;';
         echo '}';
@@ -195,167 +205,20 @@ class Template extends Section
         echo 'width: ' . $this->config->logoWidth . 'px;';
         echo '}';
 
-        echo '.header-menu {';
+        echo '#' . $this->id . ' .header-menu {';
         echo 'display: block;';
         echo '}';
 
-        echo '.header-contact-us {';
+        echo '#' . $this->id . ' .header-contact-us {';
         echo 'display: block;';
         echo '}';
 
-        echo '.header-toggle {';
+        echo '#' . $this->id . ' .header-toggle {';
         echo 'display: none;';
         echo '}';
 
         echo '}';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // ============================================================================================================= 手机端
-        echo '@media (max-width: 992px) {';
-
-        echo '#' . $this->id . ' .header-icon {';
-        echo 'display: inline-block;';
-        echo 'border: none;';
-        echo 'background-repeat: no-repeat;';
-        echo 'background-position: center center;';
-        echo 'cursor: pointer;';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-icon-menu {';
-        echo 'width: 36px;';
-        echo 'height: 36px;';
-        echo 'background-size: 36px 36px;';
-        echo 'background-image: url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\'%3e%3cpath fill=\'' . str_replace('#', '%23', $configTheme->fontColor) . '\' d=\'M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z\'/%3e%3c/svg%3e");';
-        echo '}';
-
-        echo '}';
-        // ============================================================================================================= 手机端
-
-
-        // ============================================================================================================= 电脑端
-        echo '@media (min-width: 992px) {';
-
-        echo '}';
-
-        // ------------------------------------------------------------------------------------------------------------- 菜单
-        echo '#' . $this->id . ' .header-desktop-menu {';
-        echo 'flex: 1 1 auto;';
-        echo 'padding-left: 5rem;';
-        echo 'position: relative;';
-        echo 'z-index: 100;';
-        //echo 'font-weight: 300;';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv1 {';
-        echo 'margin: 0;';
-        echo 'padding: 0;';
-        echo 'text-align: right;';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv1-item,';
-        echo '#' . $this->id . ' .header-desktop-menu-lv1-item-with-dropdown {';
-        echo 'list-style: none;';
-        echo 'display: inline-block;';
-        echo 'padding: 0;';
-        echo 'margin: 0 3rem 0 0;';
-        echo 'position: relative;';
-        echo 'height: 3rem;';
-        echo 'line-height: 3rem;';
-        echo 'text-align: left;';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv1-item-active > .header-desktop-menu-lv1-item-link {';
-        echo 'color: var(--major-color);';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv1-item-link {';
-        echo 'color: #fff;';
-        echo 'transition: all 0.3s ease;';
-        echo 'display: inline-block;';
-        echo 'height: 1.75rem;';
-        echo 'line-height: 1.75rem;';
-        echo 'font-size: .75rem;';
-        echo 'font-weight: 600;';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv1-item-link:hover {';
-        echo 'color: var(--major-color);';
-        echo 'text-decoration: none;';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv2 {';
-        echo 'margin: 0;';
-        echo 'padding: 0;';
-        echo 'position: absolute;';
-        echo 'left: -.5rem;';
-        echo 'background-color: #FFFFFF;';
-        echo 'min-width: 170px;';
-        echo 'border-top: 2px solid var(--major-color);';
-        echo 'box-shadow: 0 0.5rem 1.875rem rgb(0 0 0 / 15%);';
-        echo 'z-index: 120;';
-        echo 'transition: all 0.2s linear;';
-        echo 'transform: translateY(30px);';
-        echo 'visibility: hidden;';
-        echo 'opacity:0.1;';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv1-item-with-dropdown:hover .header-desktop-menu-lv2 {';
-        echo 'visibility: visible;';
-        echo 'opacity:1;';
-        echo 'transform: translateY(-1px)';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv2-item {';
-        echo 'list-style: none;';
-        echo 'padding: 0 2rem;';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv2-item-active > .header-desktop-menu-lv2-item-link {';
-        echo 'color: var(--major-color);';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv2-item:hover {';
-        echo 'background-color: #fafafa;';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv2-item-link {';
-        echo 'transition: all 0.3s ease;';
-        echo 'display: block;';
-        echo 'height: 2.5rem;';
-        echo 'line-height: 2.5rem;';
-        echo 'font-size: .75rem;';
-        echo 'font-weight: 600;';
-        echo 'color: ' . $configTheme->fontColor . ';';
-        echo '}';
-
-        echo '#' . $this->id . ' .header-desktop-menu-lv2-item-link:hover {';
-        echo 'color: var(--major-color);';
-        echo 'text-decoration: none;';
-        echo '}';
-        // ------------------------------------------------------------------------------------------------------------- 菜单
-
-        echo '#' . $this->id . ' .header-desktop-contact-us {';
-        echo 'flex: 0 1 auto;';
-        echo 'padding-top: .5rem;';
-        echo '}';
-
-
-        echo '}';
-        // ============================================================================================================= 电脑端
         echo '</style>';
     }
 
@@ -367,7 +230,6 @@ class Template extends Section
         }
 
         $beUrl = beUrl();
-        $wwwUrl = \Be\Be::getProperty('Theme.Ev')->getWwwUrl();
 
         $this->css();
 
@@ -378,13 +240,7 @@ class Template extends Section
 
         echo '<div class="be-col-auto">';
         echo '<div class="header-logo">';
-        echo '<a href="' . $beUrl . '">';
-        if ($this->config->logo === '') {
-            echo '<img src="' . $wwwUrl . '/images/header/logo.png">';
-        } else {
-            echo '<img src="' . $this->config->logo . '">';
-        }
-        echo '</a>';
+        echo '<a href="' . $beUrl . '"><img src="' . $this->config->logo . '" alt=""></a>';
         echo '</div>';
         echo '</div>';
 
