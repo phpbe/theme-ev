@@ -1,5 +1,5 @@
 <?php
-namespace Be\Theme\Ev\Section\AppCmsLatest;
+namespace Be\Theme\Ev\Section\AppCmsLatestArticles;
 
 /**
  * @BeConfig("文章搜索", icon="el-icon-search")
@@ -49,12 +49,21 @@ class Config
     public int $quantity = 5;
 
     /**
+     * @BeConfigItem("列数",
+     *     description="显示几列",
+     *     driver = "FormItemSlider",
+     *     ui="return [':min' => 1, ':max' => 3];"
+     * )
+     */
+    public int $cols = 3;
+
+    /**
      * @BeConfigItem("内边距 （手机端）",
      *     driver = "FormItemInput",
      *     description = "上右下左（CSS padding 语法）"
      * )
      */
-    public string $paddingMobile = '2rem';
+    public string $paddingMobile = '2rem 0';
 
     /**
      * @BeConfigItem("内边距 （平板端）",
@@ -62,7 +71,7 @@ class Config
      *     description = "上右下左（CSS padding 语法）"
      * )
      */
-    public string $paddingTablet = '3rem';
+    public string $paddingTablet = '3rem 0';
 
     /**
      * @BeConfigItem("内边距 （电脑端）",
@@ -70,7 +79,7 @@ class Config
      *     description = "上右下左（CSS padding 语法）"
      * )
      */
-    public string $paddingDesktop = '4rem';
+    public string $paddingDesktop = '4rem 0';
 
     /**
      * @BeConfigItem("外边距 （手机端）",
@@ -95,6 +104,28 @@ class Config
      * )
      */
     public string $marginDesktop = '2rem 0 0 0';
+
+
+    /**
+     * @BeConfigItem("间距 （手机端）",
+     *     driver = "FormItemInput"
+     * )
+     */
+    public string $spacingMobile = '2rem';
+
+    /**
+     * @BeConfigItem("间距 （平板端）",
+     *     driver = "FormItemInput"
+     * )
+     */
+    public string $spacingTablet = '3rem';
+
+    /**
+     * @BeConfigItem("间距 （电脑端）",
+     *     driver = "FormItemInput"
+     * )
+     */
+    public string $spacingDesktop = '4rem';
 
 
 }

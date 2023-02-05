@@ -21,7 +21,7 @@ class index
 
     public array $middleSections = [
         [
-            'name' => 'Theme.Ev.AppCmsLatest',
+            'name' => 'Theme.Ev.AppCmsLatestArticles',
         ],
     ];
 

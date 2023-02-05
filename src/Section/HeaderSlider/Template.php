@@ -77,6 +77,7 @@ class Template extends Section
         echo '}';
 
         echo '#' . $this->id . ' .header-slider-link a:hover {';
+        echo 'color: #fff;';
         echo 'transform: translateY(-8px);';
         echo '}';
 

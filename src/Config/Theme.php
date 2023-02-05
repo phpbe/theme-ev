@@ -47,6 +47,6 @@ class Theme
      * @BeConfigItem("超链接悬停颜色",
      *     driver="FormItemColorPicker")
      */
-    public string $linkHoverColor = '#fff';
+    public string $linkHoverColor = '#253745';
 
 }

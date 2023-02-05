@@ -59,9 +59,6 @@
         ?>
     </style>
 
-    <link rel="stylesheet" href="<?php echo $themeWwwUrl; ?>/css/drawer.css?v=20211102" />
-    <script src="<?php echo $themeWwwUrl; ?>/js/drawer-menu.js?v=20211102"></script>
-
     <link rel="stylesheet" href="<?php echo $themeWwwUrl; ?>/css/theme.css?v=20220907" />
     <script src="<?php echo $themeWwwUrl; ?>/js/theme.js?v=20211102"></script>
 
