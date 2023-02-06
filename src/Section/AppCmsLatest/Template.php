@@ -79,7 +79,7 @@ class Template extends Section
 
             echo '<div class="be-mt-50">';
             echo '<span class="be-c-999"><i class="bi-calendar"></i></span>';
-            echo '<span class="be-pl-50 be-c-999">'. date('F j, Y', strtotime($this->page->article->publish_time)) . '</span>';
+            echo '<span class="be-pl-50 be-c-999">'. date('F j, Y', strtotime($article->publish_time)) . '</span>';
             echo '</div>';
 
             $i++;
