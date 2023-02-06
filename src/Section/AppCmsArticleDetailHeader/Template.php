@@ -81,8 +81,9 @@ class Template extends Section
         echo '<span class="be-ml-100 be-c-major"><i class="bi-calendar"></i></span>';
         echo '<span class="be-c-fff be-pl-50">'. date('F j, Y', strtotime($this->page->article->publish_time)) . '</span>';
 
-        echo '<span class="be-ml-100 be-c-major"><i class="bi-folder2"></i></span>';
-        echo '<span class="be-c-fff be-pl-50">'. $this->page->article->author . '</span>';
+        //echo '<span class="be-ml-100 be-c-major"><i class="bi-folder2"></i></span>';
+        //echo '<span class="be-c-fff be-pl-50">'. $this->page->article->author . '</span>';
+
         echo '</div>';
 
         echo '</div>';
