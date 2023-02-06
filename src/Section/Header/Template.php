@@ -259,24 +259,8 @@ class Template extends Section
                 $hasSubItem = true;
             }
 
-            $active = false;
-            if ($hasSubItem) {
-                foreach ($item->subItems as &$subItem) {
-                    if ($item->id === $menuActiveId) {
-                        $subItem->active = true;
-                        $active = true;
-                        break;
-                    }
-                }
-                unset($subItem);
-            } else {
-                if ($item->id === $menuActiveId) {
-                    $active = true;
-                }
-            }
-
             echo '<li class="header-menu-lv1-li';
-            if ($active) {
+            if ($item->active === 1) {
                 echo ' header-menu-lv1-li-active';
             }
             echo '">';

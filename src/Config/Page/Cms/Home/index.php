@@ -42,7 +42,7 @@ class index
      *     driver = "FormItemInput"
      * )
      */
-    public string $title = 'Blog';
+    public string $title = 'Our Blog';
 
     /**
      * @BeConfigItem("Meta描述",
@@ -50,7 +50,7 @@ class index
      *     driver = "FormItemInput"
      * )
      */
-    public string $metaDescription = 'There are people who can’t start their day without having a freshly brewed cup of coffee and we understand them.';
+    public string $metaDescription = 'Our Blog';
 
     /**
      * @BeConfigItem("Meta关键词",
@@ -58,7 +58,7 @@ class index
      *     driver = "FormItemInput"
      * )
      */
-    public string $metaKeywords = 'Blog';
+    public string $metaKeywords = 'Our Blog';
 
     /**
      * @BeConfigItem("页面标题",
