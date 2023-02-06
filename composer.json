@@ -21,9 +21,6 @@
     }
   },
   "require": {
-    "be/be": "*",
-    "be/app-cms": "*",
-    "be/app-company": "*",
-    "be/app-shop": "*"
+    "be/be": "*"
   }
 }
