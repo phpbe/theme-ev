@@ -28,9 +28,6 @@ class detail
 
     public array $eastSections = [
         [
-            'name' => 'Theme.Ev.AppCmsSearch',
-        ],
-        [
             'name' => 'Theme.Ev.AppCmsLatest',
         ],
         [

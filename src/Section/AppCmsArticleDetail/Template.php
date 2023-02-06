@@ -28,37 +28,36 @@ class Template extends Section
 
     public function display()
     {
-        if ($this->config->enable) {
-            $this->css();
-            ?>
-            <div class="app-cms-article-detail-image">
-                <img src="<?php
-                if ($this->page->article->image === '') {
-                    echo \Be\Be::getProperty('App.Cms')->getWwwUrl() . '/article/images/no-image-m.jpg';
-                } else {
-                    echo $this->page->article->image;
-                }
-                ?>" alt="<?php echo $this->page->article->title; ?>">
-            </div>
-
-            <div class="be-mt-200">
-                <?php echo $this->page->article->description; ?>
-            </div>
-
-            <div class="be-mt-200">
-                Tags:
-                <?php
-                foreach ($this->page->article->tags as $tag) {
-                    ?>
-                    <a class="be-mt-50 be-ml-50" href="<?php echo beUrl('Cms.Article.search', ['tag'=> $tag]); ?>" title="<?php echo $tag; ?>">
-                        <?php echo $tag; ?>
-                    </a>
-                    <?php
-                }
-                ?>
-            </div>
-            <?php
+        if ($this->config->enable === 0) {
+            return;
         }
+
+        $this->css();
+
+        echo '<div class="app-cms-article-detail">';
+
+        if ($this->page->article->image !== '') {
+            echo '<div class="app-cms-article-detail-image">';
+            echo '<img src="' . $this->page->article->image . '" alt="' . $this->page->article->title . '">';
+            echo '</div';
+        }
+
+        echo '<div class="be-mt-200">';
+        echo $this->page->article->description;
+        echo '</div>';
+
+        echo '<div class="be-mt-200">';
+        echo 'Tags: ';
+        foreach ($this->page->article->tags as $tag) {
+            echo '<a class="be-mt-50 be-ml-50" href="';
+            echo beUrl('Cms.Article.search', ['tag' => $tag]);
+            echo '" title="' . $tag . '">';
+            echo $tag;
+            echo '</a>';
+        }
+        echo '</div>';
+
+        echo '</div>';
     }
 }
 
