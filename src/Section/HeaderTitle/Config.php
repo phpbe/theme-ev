@@ -1,5 +1,5 @@
 <?php
-namespace Be\Theme\Cafe\Section\HeaderTitleCms;
+namespace Be\Theme\Cafe\Section\HeaderTitle;
 
 /**
  * @BeConfig("头部标题", ordering="2")

@@ -97,7 +97,7 @@ class Template extends Section
 
         // ------------------------------------------------------------------------------------------------------------- 轮播图
         echo '#' . $this->id . ' .swiper {';
-        echo 'border-radius: 1rem;';
+        echo 'border-radius: .5rem;';
         echo '}';
 
         echo '#' . $this->id . ' .header-slider-image {';
@@ -133,112 +133,114 @@ class Template extends Section
 
     public function display()
     {
-        if ($this->config->enable) {
-            $count = 0;
-            foreach ($this->config->items as $item) {
-                if ($item['config']->enable) {
-                    $count++;
-                }
+        if ($this->config->enable === 0) {
+            return;
+        }
+
+        $count = 0;
+        foreach ($this->config->items as $item) {
+            if ($item['config']->enable) {
+                $count++;
             }
+        }
 
-            if ($count === 0) {
-                return;
-            }
+        if ($count === 0) {
+            return;
+        }
 
-            $this->css();
+        $this->css();
 
-            echo '<div class="header-slider">';
-            echo '<div class="header-slider-overlay"></div>';
-            echo '<div class="be-container">';
+        echo '<div class="header-slider">';
+        echo '<div class="header-slider-overlay"></div>';
+        echo '<div class="be-container">';
 
-            echo '<div class="header-slider-summary">';
-            echo '<div class="be-row">';
-            echo '<div class="be-col-24 be-md-col">';
-            echo '<div class="header-slider-title">' . $this->config->title . '</div>';
+        echo '<div class="header-slider-summary">';
+        echo '<div class="be-row">';
+        echo '<div class="be-col-24 be-md-col">';
+        echo '<div class="header-slider-title">' . $this->config->title . '</div>';
+        echo '</div>';
+
+        echo '<div class="be-col-24 be-md-col-auto"><div class="be-pl-400 be-pt-100"></div></div>';
+        echo '<div class="be-col-24 be-md-col">';
+        echo '<div class="header-slider-description"><div class="be-pt-100">' . $this->config->description . '</div></div>';
+        if ($this->config->linkText !== '') {
+            echo '<div class="be-mt-200 header-slider-link">';
+            echo '<a href="' . $this->config->linkUrl . '" class="be-fs-80">' . $this->config->linkText . '</a>';
             echo '</div>';
+        }
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
 
-            echo '<div class="be-col-24 be-md-col-auto"><div class="be-pl-400 be-pt-100"></div></div>';
-            echo '<div class="be-col-24 be-md-col">';
-            echo '<div class="header-slider-description"><div class="be-pt-100">' . $this->config->description . '</div></div>';
-            if ($this->config->linkText !== '') {
-                echo '<div class="be-mt-200 header-slider-link">';
-                echo '<a href="' . $this->config->linkUrl . '" class="be-fs-80">' . $this->config->linkText . '</a>';
+        echo '<div class="swiper be-mt-200">';
+
+        echo '<div class="swiper-wrapper">';
+        foreach ($this->config->items as $item) {
+            $itemConfig = $item['config'];
+            if ($itemConfig->enable) {
+                echo '<div class="swiper-slide">';
+                switch ($item['name']) {
+                    case 'Image':
+                        echo '<div class="header-slider-image" style="background-image: url(' . $itemConfig->image . ')">';
+                        echo '</div>';
+                        break;
+                }
                 echo '</div>';
             }
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-
-            echo '<div class="swiper be-mt-200">';
-
-            echo '<div class="swiper-wrapper">';
-            foreach ($this->config->items as $item) {
-                $itemConfig = $item['config'];
-                if ($itemConfig->enable) {
-                    echo '<div class="swiper-slide">';
-                    switch ($item['name']) {
-                        case 'Image':
-                            echo '<div class="header-slider-image" style="background-image: url(' . $itemConfig->image . ')">';
-                            echo '</div>';
-                            break;
-                    }
-                    echo '</div>';
-                }
-            }
-            echo '</div>';
-
-            if ($this->config->pagination && $count > 1) {
-                echo '<div class="swiper-pagination"></div>';
-            }
-
-            if ($this->config->navigation && $count > 1) {
-                echo '<div class="swiper-button-prev"></div>';
-                echo '<div class="swiper-button-next"></div>';
-            }
-
-            echo '</div>';
-
-            echo '</div>';
-            echo '</div>';
-
-            $key = 'Theme:Ev:swiper';
-            if (!Be::hasContext($key)) {
-                $wwwUrl = Be::getProperty('Theme.Ev')->getWwwUrl();
-                echo '<link rel="stylesheet" href="' . $wwwUrl . '/lib/swiper/8.3.2/swiper-bundle.min.css">';
-                echo '<script src="' . $wwwUrl . '/lib/swiper/8.3.2/swiper-bundle.min.js"></script>';
-            }
-
-            echo '<script>';
-            echo '$(".header").addClass("header-float");';
-
-            echo 'new Swiper(".header-slider .swiper", {';
-
-            echo 'effect: \'' . $this->config->effect . '\',';
-
-            if ($count > 1) {
-                if ($this->config->loop) {
-                    echo 'loop: true,';
-                }
-
-                if ($this->config->autoplay) {
-                    echo 'autoplay: true,';
-                    echo 'delay: ' . $this->config->delay . ',';
-                    echo 'speed: ' . $this->config->speed . ',';
-                }
-
-                if ($this->config->pagination) {
-                    echo 'pagination: {el: \'.swiper-pagination\', clickable :true},';
-                }
-
-                if ($this->config->navigation) {
-                    echo 'navigation: {nextEl: \'.swiper-button-next\', prevEl: \'.swiper-button-prev\'},';
-                }
-                echo 'grabCursor : true';
-            } else {
-                echo 'enabled:false';
-            }
-            echo '});';
-            echo '</script>';
         }
+        echo '</div>';
+
+        if ($this->config->pagination && $count > 1) {
+            echo '<div class="swiper-pagination"></div>';
+        }
+
+        if ($this->config->navigation && $count > 1) {
+            echo '<div class="swiper-button-prev"></div>';
+            echo '<div class="swiper-button-next"></div>';
+        }
+
+        echo '</div>';
+
+        echo '</div>';
+        echo '</div>';
+
+        $key = 'Theme:Ev:swiper';
+        if (!Be::hasContext($key)) {
+            $wwwUrl = Be::getProperty('Theme.Ev')->getWwwUrl();
+            echo '<link rel="stylesheet" href="' . $wwwUrl . '/lib/swiper/8.3.2/swiper-bundle.min.css">';
+            echo '<script src="' . $wwwUrl . '/lib/swiper/8.3.2/swiper-bundle.min.js"></script>';
+        }
+
+        echo '<script>';
+        echo '$(".header").addClass("header-float");';
+
+        echo 'new Swiper(".header-slider .swiper", {';
+
+        echo 'effect: \'' . $this->config->effect . '\',';
+
+        if ($count > 1) {
+            if ($this->config->loop) {
+                echo 'loop: true,';
+            }
+
+            if ($this->config->autoplay) {
+                echo 'autoplay: true,';
+                echo 'delay: ' . $this->config->delay . ',';
+                echo 'speed: ' . $this->config->speed . ',';
+            }
+
+            if ($this->config->pagination) {
+                echo 'pagination: {el: \'.swiper-pagination\', clickable :true},';
+            }
+
+            if ($this->config->navigation) {
+                echo 'navigation: {nextEl: \'.swiper-button-next\', prevEl: \'.swiper-button-prev\'},';
+            }
+            echo 'grabCursor : true';
+        } else {
+            echo 'enabled:false';
+        }
+        echo '});';
+        echo '</script>';
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Be\Theme\Cafe\Section\HeaderTitleCms;
+namespace Be\Theme\Cafe\Section\HeaderTitle;
 
 use Be\Theme\Section;
 

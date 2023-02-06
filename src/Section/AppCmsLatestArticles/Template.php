@@ -62,7 +62,7 @@ class Template extends Section
 
         echo '#' . $this->id . ' .app-cms-latest-articles-item-image img {';
         echo 'max-width: 100%;';
-        echo 'border-radius: 1rem;';
+        echo 'border-radius: .5rem;';
         echo '}';
 
         echo '#' . $this->id . ' .app-cms-latest-articles-item-title {';
