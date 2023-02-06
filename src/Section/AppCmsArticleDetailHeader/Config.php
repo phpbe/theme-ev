@@ -6,6 +6,11 @@ namespace Be\Theme\Ev\Section\AppCmsArticleDetailHeader;
  */
 class Config
 {
+    /**
+     * @BeConfigItem("是否启用",
+     *     driver = "FormItemSwitch")
+     */
+    public int $enable = 1;
 
     /**
      * @BeConfigItem("背景颜色",
