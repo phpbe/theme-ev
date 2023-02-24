@@ -7,6 +7,16 @@ use Be\Be;
 class index
 {
 
+    public array $northSections = [
+        [
+            'name' => 'Theme.Ev.Header',
+        ],
+        [
+            'name' => 'Theme.Ev.HeaderTitle',
+        ],
+    ];
+
+
     public int $middle = 1;
 
     public array $middleSections = [
@@ -35,7 +45,7 @@ class index
      *     driver = "FormItemInput"
      * )
      */
-    public string $metaDescription = 'There are people who can’t start their day without having a freshly brewed cup of coffee and we understand them.';
+    public string $metaDescription = '';
 
     /**
      * @BeConfigItem("Meta关键词",
@@ -58,20 +68,16 @@ class index
     {
         $wwwUrl = Be::getProperty('Theme.Ev')->getWwwUrl();
 
-        $this->middleSections[1]['config'] = [
+        $this->northSections[1]['config'] = (object)[
             'enable' => 1,
-            'backgroundColor' => '#FFF8F1',
-            'backgroundImage' => $wwwUrl . '/images/join-us-bg.png',
-            'title' => 'Want to join our team?',
-            'description' => 'There are people who can’t start their day without having a freshly brewed cup of coffee and we understand them.',
-            'buttonText' => 'JOIN NOW',
-            'buttonUrl' => '#',
-            'paddingMobile' => '4rem',
-            'paddingTablet' => '5rem',
-            'paddingDesktop' => '6rem',
-            'marginMobile' => '0 0 6rem 0',
-            'marginTablet' => '0 0 6rem 0',
-            'marginDesktop' => '0 0 6rem 0',
+            'backgroundColor' => '#02121E',
+            'backgroundImage' => $wwwUrl . '/images/header-title/bg-5.jpg',
+            'paddingMobile' => '8rem 0 6rem 0',
+            'paddingTablet' => '10rem 0 8rem 0',
+            'paddingDesktop' => '12rem 0 10rem 0',
+            'marginMobile' => '0',
+            'marginTablet' => '0',
+            'marginDesktop' => '0',
         ];
     }
 

@@ -37,16 +37,21 @@
 
         echo 'body {';
         echo '--major-color: ' . $configTheme->majorColor . ';';
+        echo '--minor-color: ' . $configTheme->minorColor . ';';
+        echo '--font-color: ' . $configTheme->fontColor . ';';
 
         // CSS 处理库
         $libCss = \Be\Be::getLib('Css');
         for ($i=1; $i<=9; $i++) {
             echo '--major-color-' . $i. ': ' . $libCss->lighter($configTheme->majorColor, $i * 10) . ';';
             echo '--major-color' . $i. ': ' . $libCss->darker($configTheme->majorColor, $i * 10) . ';';
-        }
 
-        echo '--minor-color: ' . $configTheme->minorColor . ';';
-        echo '--font-color: ' . $configTheme->fontColor . ';';
+            echo '--minor-color-' . $i. ': ' . $libCss->lighter($configTheme->minorColor, $i * 10) . ';';
+            echo '--minor-color' . $i. ': ' . $libCss->darker($configTheme->minorColor, $i * 10) . ';';
+
+            echo '--font-color-' . $i. ': ' . $libCss->lighter($configTheme->fontColor, $i * 10) . ';';
+            echo '--font-color' . $i. ': ' . $libCss->darker($configTheme->fontColor, $i * 10) . ';';
+        }
         echo '}';
 
         echo 'a {';

@@ -2,6 +2,8 @@
 
 namespace Be\Theme\Ev\Config\Page\Cms\Home;
 
+use Be\Be;
+
 class index
 {
 
@@ -67,5 +69,23 @@ class index
      * )
      */
     public string $pageTitle = '';
+
+
+    public function __construct()
+    {
+        $wwwUrl = Be::getProperty('Theme.Ev')->getWwwUrl();
+
+        $this->northSections[1]['config'] = (object)[
+            'enable' => 1,
+            'backgroundColor' => '#02121E',
+            'backgroundImage' => $wwwUrl . '/images/header-title/bg-4.jpg',
+            'paddingMobile' => '8rem 0 6rem 0',
+            'paddingTablet' => '10rem 0 8rem 0',
+            'paddingDesktop' => '12rem 0 10rem 0',
+            'marginMobile' => '0',
+            'marginTablet' => '0',
+            'marginDesktop' => '0',
+        ];
+    }
 
 }
