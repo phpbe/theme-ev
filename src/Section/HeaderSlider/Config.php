@@ -167,7 +167,7 @@ class Config
      * @BeConfigItem("子项",
      *     driver = "FormItemsMixedConfigs",
      *     items = "return [
-     *          \Be\Theme\Ev\Section\HomeSlider\Item\Image::class,
+     *          \Be\Theme\Ev\Section\HeaderSlider\Item\Image::class,
      *     ]"
      * )
      */
