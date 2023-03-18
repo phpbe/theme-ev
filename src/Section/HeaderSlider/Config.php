@@ -168,6 +168,7 @@ class Config
      *     driver = "FormItemsMixedConfigs",
      *     items = "return [
      *          \Be\Theme\Ev\Section\HeaderSlider\Item\Image::class,
+     *          \Be\Theme\Ev\Section\HeaderSlider\Item\Video::class,
      *     ]"
      * )
      */

@@ -111,13 +111,25 @@ class Template extends Section
         echo '}';
 
         echo '#' . $this->id . ' .swiper-slide-active .header-slider-image,';
-        echo '#' . $this->id . ' .swiper-slide-duplicate-active .header-slider-image{';
+        echo '#' . $this->id . ' .swiper-slide-duplicate-active .header-slider-image {';
         echo 'transition:6s linear;';
         echo 'transform:scale(1.1,1.1);';
         echo '}';
 
+        echo '.header-slider-video video {';
+        echo 'display: block;';
+        echo 'width: 100%;';
+        echo 'height: 600px;';
+        echo 'object-fit: cover;';
+        echo '}';
+
         // 电脑端
         echo '@media (max-width: 768px) {';
+
+        echo '#' . $this->id . ' .header-slider-image {';
+        echo 'height: 600px;';
+        echo 'max-height: 100vh;';
+        echo '}';
 
         echo '#' . $this->id . ' .header-slider-image {';
         echo 'height: 600px;';
@@ -182,6 +194,13 @@ class Template extends Section
                 switch ($item['name']) {
                     case 'Image':
                         echo '<div class="header-slider-image" style="background-image: url(' . $itemConfig->image . ')">';
+                        echo '</div>';
+                        break;
+                    case 'Video':
+                        echo '<div class="header-slider-video">';
+                        echo '<video loop="loop" autoplay="autoplay" muted="muted">';
+                        echo '<source src="' . $itemConfig->video . '" type="video/mp4">';
+                        echo '</video>';
                         echo '</div>';
                         break;
                 }
