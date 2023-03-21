@@ -27,10 +27,10 @@ class Page
 
     public array $middleSections = [
         [
-            'name' => 'be-page-title',
+            'name' => 'Theme.System.PageTitle',
         ],
         [
-            'name' => 'be-page-content',
+            'name' => 'Theme.System.PageContent',
         ],
     ];
 
@@ -40,10 +40,10 @@ class Page
 
     public array $centerSections = [
         [
-            'name' => 'be-page-title',
+            'name' => 'Theme.System.PageTitle',
         ],
         [
-            'name' => 'be-page-content',
+            'name' => 'Theme.System.PageContent',
         ],
     ];
 
